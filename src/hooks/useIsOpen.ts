@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-const useIsOpen = () => {
+export const useIsOpen = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = useCallback(() => setIsOpen(true), []);
@@ -13,5 +13,3 @@ const useIsOpen = () => {
     toggle,
   };
 };
-
-export default useIsOpen;

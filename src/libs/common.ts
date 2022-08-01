@@ -15,10 +15,10 @@ export function checkValidPhoneNumber(input: string) {
   return false;
 }
 
-export const getBase64 = (img: File, callback: (v: string | ArrayBuffer | null) => void) => {
+export const getBase64 = (imgFile: File, callback: (v: string | ArrayBuffer | null) => void) => {
   const reader = new FileReader();
   reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
+  reader.readAsDataURL(imgFile);
 };
 
 export const getBase64FileList = (file: File) =>
@@ -119,7 +119,10 @@ export const disabledDateNow = (current: Dayjs) =>
 export const containsDecodeComponents = (x: string) => decodeURIComponent(x);
 export const containsEncodeComponents = (x: string) => encodeURIComponent(x);
 
-export const deleteELObjByKey = <T extends Record<string, never>>(obj: T, key: string[] = []) => {
+export const deleteELObjByKey = <T extends Record<string, string | any>>(
+  obj: T,
+  key: string[] = []
+) => {
   const newObj = obj;
   if (key && key?.length > 0)
     key.forEach((el) => {
@@ -128,7 +131,7 @@ export const deleteELObjByKey = <T extends Record<string, never>>(obj: T, key: s
   return newObj;
 };
 
-export const convertObjToQuery = <T extends Record<string, never>>(obj: T) => {
+export const convertObjToQuery = <T extends Record<string, string | any>>(obj: T) => {
   const str = [];
   // eslint-disable-next-line no-restricted-syntax
   for (const key in obj) {
@@ -184,7 +187,7 @@ export const checkCookie = (cname: string) => {
 };
 
 // use in breadcrumb
-export const convertArrayToObject = <T extends Record<string, never>>(
+export const convertArrayToObject = <T extends Record<string, string | any>>(
   data: T[],
   key1: string,
   key2: string,
@@ -226,7 +229,7 @@ export const checkLinkImage = (link: string | string[]) => {
 export const capitalizeFirstLetter = (str: string) =>
   str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
 
-export const chunkArray = <T>(array: T[] | unknown, n: number) => {
+export const chunkArray = <T>(array: T[] | any, n: number) => {
   if (!array || !Array.isArray(array)) return [];
   const result = array.reduce(
     (resultArray: typeof array, item: typeof array[number], index: number) => {

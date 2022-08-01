@@ -37,7 +37,7 @@ export function getLocalStored(key: string) {
   return stored ? JSON.parse(stored) : null;
 }
 
-export function setLocalStored(key: string, data: unknown): void {
+export function setLocalStored(key: string, data: any): void {
   localStorage.setItem(key, JSON.stringify(data));
 }
 

@@ -19,7 +19,7 @@ function queryErrorHandler(error: unknown) {
   logger.debug('🚀 ~ Query onError:', { id, title, accessToken });
 }
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       onError: queryErrorHandler,
@@ -43,4 +43,3 @@ const queryClient = new QueryClient({
   //     },
   // }),
 });
-export default queryClient;

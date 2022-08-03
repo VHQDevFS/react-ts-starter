@@ -55,7 +55,7 @@ declare module '*.svg' {
   interface ISvg extends React.ComponentPropsWithRef<'svg'> {
     width: string | number;
     height: string | number;
-    fill?: string | 'current' | 'currentColor'; // color: ;
+    fill?: string | 'current' | 'currentColor'; // color
   }
 
   const content: React.ElementType<ISvg & { title?: string }>;

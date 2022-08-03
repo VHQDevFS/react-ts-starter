@@ -10,7 +10,7 @@ function App() {
       <Button />
       <h1 className="">Set up webpack react with environment {process.env.name}</h1>
 
-      <Logo width={30} height={30} fill="yellow" />
+      <Logo width={200} height={200} fill="pink" />
     </main>
   );
 }

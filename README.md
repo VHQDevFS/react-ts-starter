@@ -51,7 +51,7 @@ yarn start:dev
 
   - import Logo from '@assets/svgs/logo.svg'
 
-  - in jsx : <Logo width={10} height={10} fill='red' />
+  - in jsx : `<Logo width={10} height={10} fill='red' />`
 
 ## Add config vscode to use eslint and prettier
 
